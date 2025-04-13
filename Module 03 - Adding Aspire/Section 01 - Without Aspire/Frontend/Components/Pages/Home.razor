@@ -1,0 +1,36 @@
+﻿@page "/"
+@inject BackendHttpClient HttpClient
+
+<PageTitle>Home</PageTitle>
+
+<div class="container mt-4">
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg mb-4" @onclick="GetPodcasts">Get Podcasts</button>
+    </div>
+
+    @if (_podcasts is not null)
+    {
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Podcast List</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach (var podcast in _podcasts)
+                    {
+                        <li class="list-group-item">@podcast</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<string>? _podcasts;
+
+    private async Task GetPodcasts()
+    {
+        _podcasts = await HttpClient.GetPodcasts();
+    }
+}
