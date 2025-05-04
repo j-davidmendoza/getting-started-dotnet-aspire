@@ -7,12 +7,16 @@ builder.AddServiceDefaults();
 
 builder.Services.AddCors();
 
-var connectionString =
-    builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-
-builder.Services.AddDbContext<PodcastDbContext>(options =>
-    options.UseSqlServer(connectionString));
+builder.AddSqlServerDbContext<PodcastDbContext>(connectionName: "podcasts");
+//We canget rid of the connection string from the appsettings.json file and the below code witht he connectionname extension metho
+//Just call rational name of the database name
+//Done behind the scenes by the extension method with just one line of code
+//var connectionString =
+//    builder.Configuration.GetConnectionString("DefaultConnection")
+//    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+////We are using native EF  Db context 
+//builder.Services.AddDbContext<PodcastDbContext>(options =>
+//    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
