@@ -10,4 +10,8 @@
       <PackageReference Include="bootstrap" Version="5.3.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
+    </ItemGroup>
+
 </Project>
