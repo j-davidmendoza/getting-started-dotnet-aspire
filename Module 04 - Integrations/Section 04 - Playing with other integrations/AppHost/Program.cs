@@ -26,7 +26,9 @@ var db = server
 
 var api = builder.AddProject<Api>("api")
     .WithReference(db)
-    .WithHttpEndpoint(name: "dashboard")
+    .WithHttpsEndpoint(port: 1234) //This is an explict binding, if not aspire will do implict bindings here it expects appurl in launchsettings, can also use kestral
+    // If not appurl nor explict, then no binding behind api
+    //.WithHttpEndpoint(name: "dashboard")
     .WaitFor(db);
 
 builder.AddProject<Frontend>("frontend")
