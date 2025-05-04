@@ -26,6 +26,7 @@ var db = server
 
 var api = builder.AddProject<Api>("api")
     .WithReference(db)
+    .WithHttpEndpoint(name: "dashboard")
     .WaitFor(db);
 
 builder.AddProject<Frontend>("frontend")
