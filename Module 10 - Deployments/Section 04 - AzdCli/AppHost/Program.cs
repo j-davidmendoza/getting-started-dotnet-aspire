@@ -17,6 +17,7 @@ var cache = builder.AddRedis("cache")
 var ratingService = builder.AddProject<RatingService>("ratingservice")
     .WithReference(cache)
     .WaitFor(cache);
+    //.ExcludeFromManifest(); //Tells not to put into manifest file
 
 var api = builder.AddProject<Api>("api")
     .WithReference(db)
