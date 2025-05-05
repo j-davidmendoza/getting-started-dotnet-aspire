@@ -34,4 +34,6 @@ builder.AddProject<MigrationService>("migration")
     .WaitFor(db)
     .WithParentRelationship(server);
 
+builder.AddDockerComposePublisher();
+
 builder.Build().Run();
