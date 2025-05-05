@@ -11,7 +11,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         builder.ConfigureHostConfiguration(configBuilder =>
         {
             configBuilder.AddInMemoryCollection([
-                new KeyValuePair<string, string?>("ConnectionStrings:podcasts", "Server=127.0.0.1,1433;User ID=sa;Password=Dometrain#123;TrustServerCertificate=true;Initial Catalog=podcasts"),
+                new KeyValuePair<string, string?>("ConnectionStrings:podcasts", "Server=127.0.0.1,62115;User ID=sa;Password=Dometrain#123;TrustServerCertificate=true;Initial Catalog=podcasts"),
                 new KeyValuePair<string, string?>("services:ratingservice:http:0", "http://localhost:5143"),
                 new KeyValuePair<string, string?>("services:ratingservice:https:0", "https://localhost:7093")
             ]);
