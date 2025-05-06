@@ -36,5 +36,6 @@ builder.AddProject<MigrationService>("migration")
     .WithParentRelationship(server);
 
 builder.AddDockerComposePublisher();
+builder.AddKubernetesPublisher();
 
 builder.Build().Run();
