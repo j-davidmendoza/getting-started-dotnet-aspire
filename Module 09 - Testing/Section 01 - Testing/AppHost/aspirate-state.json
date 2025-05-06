@@ -1,0 +1,40 @@
+{
+  "projectPath": ".",
+  "outputPath": "aspirate-output",
+  "containerImageTags": [
+    "latest"
+  ],
+  "imagePullPolicy": "IfNotPresent",
+  "containerBuilder": "docker",
+  "outputFormat": "helm",
+  "privateRegistryEmail": "aspir8@aka.ms",
+  "includeDashboard": true,
+  "secrets": {
+    "salt": "n9KaR37DjuSYho0A",
+    "hash": "dcK0zcU3zqo3r\u002B2IPFK2kL7faU5oKU/g6WhVq0DKTuU=",
+    "secrets": {
+      "cache-password": {
+        "value": "n9KaR37DjuSYho0A9Z5ZfIJg1/P9HH4a28iN\u002Bg88sWBnbPZEcfiezR1SxP0tFJtd0\u002BA="
+      },
+      "password": {
+        "value": "n9KaR37DjuSYho0AIolLouFeFDUUMv72abowQSYbrVZxLMVfXrzhsFw="
+      },
+      "server": {
+        "MSSQL_SA_PASSWORD": "n9KaR37DjuSYho0AIolLouFeFDUUMv72abowQSYbrVZxLMVfXrzhsFw="
+      },
+      "podcasts": {},
+      "cache": {},
+      "ratingservice": {
+        "ConnectionStrings__cache": "n9KaR37DjuSYho0AifJCoCDMZW\u002BCY8rYsX59fQEVo1tgZJIFB6b88g5Px\u002BUrV5Es\u002BvlCJOVyBK9zDoEhhrrfEk\u002B8A3Z99w=="
+      },
+      "api": {
+        "ConnectionStrings__podcasts": "n9KaR37DjuSYho0AIv\u002BYwMHbzxtnJSf39VVQSTERskVgLJlFVe2m5x0QgqB1FMAqwsJWBacJEuBBCPQ\u002BlafcCkn/CQd9yeRJlAwxVFomS/f/7D8dOLzO3IlqdZ78RWQXPQbxy3/QJ9nWkfVmo9KCV2V6R0JO5ECo8VLwaEDcncvMwL9JJTA="
+      },
+      "frontend": {},
+      "migration": {
+        "ConnectionStrings__podcasts": "n9KaR37DjuSYho0AIv\u002BYwMHbzxtnJSf39VVQSTERskVgLJlFVe2m5x0QgqB1FMAqwsJWBacJEuBBCPQ\u002BlafcCkn/CQd9yeRJlAwxVFomS/f/7D8dOLzO3IlqdZ78RWQXPQbxy3/QJ9nWkfVmo9KCV2V6R0JO5ECo8VLwaEDcncvMwL9JJTA="
+      }
+    }
+  },
+  "processAllComponents": true
+}

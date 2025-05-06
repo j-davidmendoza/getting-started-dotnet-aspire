@@ -1,0 +1,8 @@
+images:
+  server: mcr.microsoft.com/mssql/server:2022-latest
+  cache: docker.io/library/redis:7.4
+  ratingservice: ratingservice:latest
+  api: api:latest
+  frontend: frontend:latest
+  migration: migration:latest
+  aspiredashboard: mcr.microsoft.com/dotnet/aspire-dashboard:9.0

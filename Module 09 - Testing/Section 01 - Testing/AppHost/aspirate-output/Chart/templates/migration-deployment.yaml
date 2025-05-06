@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    app: migration
+  name: migration
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: migration
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations: {}
+      labels:
+        app: migration
+    spec:
+      containers:
+      - args: []
+        envFrom:
+        - configMapRef:
+            name: migration
+        - secretRef:
+            name: migration
+        image: '{{ .Values.images.migration }}'
+        imagePullPolicy: IfNotPresent
+        name: migration
+      terminationGracePeriodSeconds: 180

@@ -18,13 +18,13 @@ secrets:
     password: "Dometrain#123"
   ratingservice:
     cache_password: "Dometrain#123"
+  cache:
+    cache_password: "Dometrain#123"
+    REDIS_PASSWORD: "Dometrain#123"
   migration:
     password: "Dometrain#123"
   api:
     passsword: "Dometrain#123"
-  cache:
-    cache_password: "Dometrain#123"
-    REDIS_PASSWORD: "Dometrain#123"
 config:
   server:
     ACCEPT_EULA: "Y"

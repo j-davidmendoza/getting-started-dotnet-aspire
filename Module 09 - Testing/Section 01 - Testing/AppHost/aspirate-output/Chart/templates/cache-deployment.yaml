@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    app: cache
+  name: cache
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cache
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations: {}
+      labels:
+        app: cache
+    spec:
+      containers:
+      - args:
+        - -c
+        - redis-server --requirepass $REDIS_PASSWORD
+        command:
+        - /bin/sh
+        envFrom:
+        - configMapRef:
+            name: cache
+        image: '{{ .Values.images.cache }}'
+        imagePullPolicy: IfNotPresent
+        name: cache
+        ports:
+        - containerPort: 6379
+          name: tcp
+      terminationGracePeriodSeconds: 180

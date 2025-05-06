@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  REDIS_PASSWORD: mHqSb2RrAgNOrnpoi1nLDQ
+  OTEL_EXPORTER_OTLP_ENDPOINT: http://aspire-dashboard:18889
+  OTEL_SERVICE_NAME: cache
+kind: ConfigMap
+metadata:
+  annotations: {}
+  labels:
+    app: cache
+  name: cache

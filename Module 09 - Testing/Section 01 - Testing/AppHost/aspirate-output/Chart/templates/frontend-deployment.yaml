@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations: {}
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations: {}
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - args: []
+        envFrom:
+        - configMapRef:
+            name: frontend
+        image: '{{ .Values.images.frontend }}'
+        imagePullPolicy: IfNotPresent
+        name: frontend
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8443
+          name: https
+      terminationGracePeriodSeconds: 180
